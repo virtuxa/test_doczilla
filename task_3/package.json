@@ -1,0 +1,21 @@
+{
+  "name": "weather-forecast-service",
+  "version": "1.0.0",
+  "description": "Сервис прогноза погоды с кэшированием и визуализацией",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc && node dist/server.js"
+  },
+  "keywords": ["weather", "forecast", "cache"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+
+
