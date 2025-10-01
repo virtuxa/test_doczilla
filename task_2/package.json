@@ -1,0 +1,25 @@
+{
+  "name": "file-sharing-service",
+  "version": "1.0.0",
+  "description": "Сервис обмена файлами с временными ссылками",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc && node dist/server.js"
+  },
+  "keywords": ["file-sharing", "upload", "download"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+
+
