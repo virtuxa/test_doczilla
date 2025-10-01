@@ -1,0 +1,13 @@
+# Зависимости
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+dist/
+
+# Файлы загрузок и данные
+task_2/uploads/
+task_2/auth.json
+task_2/metadata.json
