@@ -1,0 +1,15 @@
+{
+  "name": "liquid-sorting-puzzle-solver",
+  "version": "1.0.0",
+  "description": "Программа для решения головоломки сортировки жидкостей",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["puzzle", "sorting", "liquid"],
+  "author": "",
+  "license": "MIT"
+}
+
+
