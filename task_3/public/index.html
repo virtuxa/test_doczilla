@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз погоды</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌤️ Прогноз погоды</h1>
+      <p>Получите актуальный прогноз температуры на 24 часа</p>
+    </header>
+
+    <div class="search-section">
+      <form id="searchForm">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="cityInput" 
+            placeholder="Введите название города (например, Moscow)"
+            required
+          >
+          <button type="submit" class="btn btn-primary">
+            🔍 Поиск
+          </button>
+        </div>
+      </form>
+
+      <div class="popular-cities">
+        <span>Популярные города:</span>
+        <button class="city-btn" data-city="Moscow">Москва</button>
+        <button class="city-btn" data-city="London">Лондон</button>
+        <button class="city-btn" data-city="Paris">Париж</button>
+        <button class="city-btn" data-city="Tokyo">Токио</button>
+        <button class="city-btn" data-city="New York">Нью-Йорк</button>
+      </div>
+    </div>
+
+    <div id="loadingIndicator" class="loading" style="display: none;">
+      <div class="spinner"></div>
+      <p>Загрузка данных о погоде...</p>
+    </div>
+
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+    <div id="weatherResult" class="weather-result" style="display: none;">
+      <div class="city-info">
+        <h2 id="cityName"></h2>
+        <p id="coordinates"></p>
+        <div id="cacheStatus" class="cache-badge"></div>
+      </div>
+
+      <div class="temperature-stats">
+        <div class="stat-card">
+          <div class="stat-icon">🌡️</div>
+          <div class="stat-value" id="currentTemp">--°C</div>
+          <div class="stat-label">Текущая температура</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-value" id="maxTemp">--°C</div>
+          <div class="stat-label">Максимальная</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📉</div>
+          <div class="stat-value" id="minTemp">--°C</div>
+          <div class="stat-label">Минимальная</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-value" id="avgTemp">--°C</div>
+          <div class="stat-label">Средняя</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>График температуры по часам</h3>
+        <canvas id="temperatureChart"></canvas>
+      </div>
+
+      <div class="hourly-forecast">
+        <h3>Почасовой прогноз</h3>
+        <div id="hourlyList" class="hourly-list"></div>
+      </div>
+    </div>
+
+    <div class="cache-info">
+      <h3>📊 Статистика кэша</h3>
+      <div id="cacheStats" class="stats-grid"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+
+
